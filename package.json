@@ -1,0 +1,26 @@
+{
+  "name": "ci-templates",
+  "version": "1.0.0",
+  "description": "Composable, least-privilege GitHub Actions workflows: Node and Python CI, Docker release with SBOM and signing, security scanning and Pages deploys.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "author": "Arvion Technologies <hello@arviontech.net> (https://arviontech.net)",
+  "homepage": "https://arvion-technology.github.io/labs/demos/ci-templates/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arvion-technology/ci-templates.git"
+  },
+  "scripts": {
+    "test": "node --test test/",
+    "demo": "node scripts/serve.mjs . 4173",
+    "shot": "node scripts/shot.mjs 1440 900 docs/screenshot.png #node-ci",
+    "shot:2": "node scripts/shot.mjs 1440 900 docs/screenshot-2.png #docker-release-permissions",
+    "verify": "node --test test/ && node scripts/validate.mjs && node scripts/serve-check.mjs",
+    "validate": "node scripts/validate.mjs",
+    "build:data": "node scripts/build-data.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
