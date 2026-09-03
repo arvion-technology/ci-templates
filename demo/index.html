@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>CI Templates — reusable GitHub Actions workflows</title>
+  <meta name="description" content="Explore five reusable GitHub Actions workflows: Node and Python CI, Docker release with SBOM and signing, CodeQL security scanning and Pages deploys. Real YAML, inputs and a permissions matrix." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230b0f1a'/><text x='16' y='22' font-family='sans-serif' font-size='16' font-weight='700' fill='%23f5c26b' text-anchor='middle'>A</text></svg>" />
+  <link rel="stylesheet" href="arvion.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="aurora"></div>
+  <div class="grid-lines"></div>
+
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark">A</span>
+        <span>
+          <span class="brand-word">ARVION <b>/</b> CI TEMPLATES</span>
+          <span class="brand-sub" style="display:block">GitHub Actions, reused</span>
+        </span>
+      </a>
+      <span class="spacer"></span>
+      <span class="badge mono" id="hash-badge">—</span>
+      <span class="badge gold" id="pinned-badge">—</span>
+      <a class="btn sm" href="https://github.com/arvion-technology/ci-templates" target="_blank" rel="noopener">GitHub ↗</a>
+    </header>
+
+    <main class="main">
+      <div class="page-head">
+        <div>
+          <div class="eyebrow">DevOps / CI templates</div>
+          <h1>CI Templates</h1>
+          <p class="lede">Five reusable GitHub Actions workflows with explicit inputs, least-privilege permissions and every action pinned to a commit.</p>
+        </div>
+        <span class="spacer"></span>
+        <div class="row">
+          <span class="badge green" id="workflow-badge">—</span>
+          <span class="badge" id="example-badge">—</span>
+        </div>
+      </div>
+
+      <div class="grid explorer-grid">
+        <div class="col side-col">
+          <div class="card">
+            <div class="card-head">
+              <div class="card-title">Reusable workflows</div>
+              <span class="spacer"></span>
+              <span class="badge" id="workflow-count">—</span>
+            </div>
+            <div class="picker-list" id="workflow-list"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <div class="card-title">Examples</div>
+            </div>
+            <div class="picker-list" id="example-list"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <div class="card-title">Docs</div>
+            </div>
+            <div class="doc-list" id="doc-list"></div>
+          </div>
+        </div>
+
+        <div class="card detail-card">
+          <div class="card-head">
+            <div>
+              <div class="card-title" id="detail-title">—</div>
+              <div class="card-sub mono" id="detail-sub">—</div>
+            </div>
+            <span class="spacer"></span>
+            <div class="tabs" id="detail-tabs"></div>
+          </div>
+          <div id="detail-body"></div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <div class="demo-banner">
+    <span class="brand-mark" style="width:20px;height:20px;font-size:10px;border-radius:6px">A</span>
+    <span>Arvion Labs</span>
+    <span class="sep"></span>
+    <a href="https://arvion-technology.github.io/labs/">All projects</a>
+    <span class="sep"></span>
+    <a href="https://github.com/arvion-technology/ci-templates" target="_blank" rel="noopener">source</a>
+  </div>
+
+  <script src="arvion.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
