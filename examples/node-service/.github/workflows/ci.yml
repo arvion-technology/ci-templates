@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: Node service
+    uses: arvion-technology/ci-templates/.github/workflows/reusable-node-ci.yml@v1
+    with:
+      node-versions: '["20", "22"]'
+      working-directory: "."
+      coverage-threshold: 80

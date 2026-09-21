@@ -1,0 +1,37 @@
+name: Docs site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build the static site
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+
+      - name: Assemble the site
+        run: |
+          mkdir -p public
+          cp -R docs/. public/
+
+      - name: Upload the Pages artifact
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
+        with:
+          path: public
+
+  deploy:
+    name: Deploy
+    needs: build
+    uses: arvion-technology/ci-templates/.github/workflows/reusable-pages.yml@v1
+    with:
+      artifact-name: github-pages
