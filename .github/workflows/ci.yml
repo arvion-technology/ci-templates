@@ -32,7 +32,6 @@ jobs:
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
           node-version: ${{ matrix.node }}
-          cache: npm
 
       - name: Unit tests
         run: npm test
