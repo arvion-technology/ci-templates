@@ -20,11 +20,11 @@ needs it.
 
 | Workflow | contents | packages | id-token | security-events | pull-requests | pages |
 | --- | --- | --- | --- | --- | --- | --- |
-| node-ci | read | — | — | — | — | — |
-| python-ci | read | — | — | — | — | — |
-| docker-release | read | write | write | write | — | — |
-| security-scan | read | — | — | write | write | — |
-| pages | read (top) | — | write (job) | — | — | write (job) |
+| node-ci | read |: |: |: |: |: |
+| python-ci | read |: |: |: |: |: |
+| docker-release | read | write | write | write |: |: |
+| security-scan | read |: |: | write | write |: |
+| pages | read (top) |: | write (job) |: |: | write (job) |
 
 `security-scan` needs `pull-requests: write` only for the dependency-review job
 to post its summary. The CodeQL job does not get it.
@@ -43,5 +43,5 @@ to post its summary. The CodeQL job does not get it.
 
 On `pull_request` from a fork the token is read-only and secrets are empty. The
 Node and Python workflows therefore work unchanged, while `docker-release` is
-not called from pull requests at all — it runs on tags, from the main
+not called from pull requests at all, it runs on tags, from the main
 repository, where the registry secret exists.

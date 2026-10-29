@@ -45,7 +45,7 @@ if (process.argv.includes("--json")) {
   console.log(JSON.stringify({ ok, result, actionlint: lint }, null, 2));
 } else {
   console.log("GitHub Actions templates");
-  console.log(`actionlint: ${actionlint ? (lint.ok ? "passed" : "failed") : "not installed — skipped"}`);
+  console.log(`actionlint: ${actionlint ? (lint.ok ? "passed" : "failed") : "not installed, skipped"}`);
   process.stdout.write(formatValidation(result));
   if (actionlint && !lint.ok) console.log(lint.output);
   if (!ok) console.log("\nworkflow validation failed");

@@ -120,7 +120,7 @@ function workflowOverview(workflow) {
         { key: "name", label: "Input", render: (row) => el("span", { class: "mono", text: row.name }) },
         { key: "type", label: "Type", render: (row) => el("span", { class: "badge", text: row.type }) },
         { key: "required", label: "Required", render: (row) => (row.required ? el("span", { class: "badge gold", text: "yes" }) : el("span", { class: "small muted", text: "no" })) },
-        { key: "default", label: "Default", render: (row) => el("span", { class: "mono muted", text: row.default === null ? "—" : row.default }) },
+        { key: "default", label: "Default", render: (row) => el("span", { class: "mono muted", text: row.default === null ? ", " : row.default }) },
         { key: "description", label: "Description", render: (row) => el("span", { class: "small", text: row.description }) },
       ],
       rows: workflow.inputs,
@@ -169,7 +169,7 @@ function workflowPermissions(workflow) {
 }
 
 function permissionCell(value) {
-  if (!value) return el("span", { class: "small muted", text: "—" });
+  if (!value) return el("span", { class: "small muted", text: ", " });
   return el("span", { class: "badge " + (value === "write" ? "gold" : "green"), text: value });
 }
 

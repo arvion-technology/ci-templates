@@ -2,7 +2,7 @@
 <img src="docs/demo.gif" alt="CI Templates explorer: Node CI inputs and jobs, with actions pinned to commits" width="100%" />
 </div>
 
-<sub>Recorded from the live demo — <a href="docs/demo.mp4">MP4</a> · <a href="docs/screenshot.png">static frame</a></sub>
+<sub>Recorded from the live demo, <a href="docs/demo.mp4">MP4</a> · <a href="docs/screenshot.png">static frame</a></sub>
 
 # CI Templates
 
@@ -26,19 +26,19 @@ security problem.
 
 ## What it does
 
-- **`reusable-node-ci.yml`** — Node matrix, `npm ci`, tests, optional coverage
+- **`reusable-node-ci.yml`**: Node matrix, `npm ci`, tests, optional coverage
   gate, caller-supplied working directory.
-- **`reusable-python-ci.yml`** — Ruff and pytest with coverage across a Python
+- **`reusable-python-ci.yml`**: Ruff and pytest with coverage across a Python
   matrix.
-- **`reusable-docker-release.yml`** — multi-platform build with provenance and
+- **`reusable-docker-release.yml`**: multi-platform build with provenance and
   SBOM, Trivy scan that fails on high/critical, SARIF upload, keyless cosign
   signature.
-- **`reusable-security-scan.yml`** — CodeQL with security-and-quality queries,
+- **`reusable-security-scan.yml`**: CodeQL with security-and-quality queries,
   and dependency review on pull requests.
-- **`reusable-pages.yml`** — deploys an artifact produced by the caller.
-- **Four examples** — complete caller workflows for a Node service, a Python
+- **`reusable-pages.yml`**: deploys an artifact produced by the caller.
+- **Four examples**: complete caller workflows for a Node service, a Python
   service, a tagged container release and a Pages site.
-- **A validator** — parses every workflow, checks `workflow_call` inputs, pins,
+- **A validator**: parses every workflow, checks `workflow_call` inputs, pins,
   permissions, triggers and untrusted expression interpolation, and runs on
   `npm test`.
 
